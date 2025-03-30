@@ -1,326 +1,365 @@
-(function ($)
-  { "use strict"
-  
-/* 1. Proloder */
-    $(window).on('load', function () {
-      $('#preloader-active').delay(450).fadeOut('slow');
-      $('body').delay(450).css({
-        'overflow': 'visible'
-      });
-    });
-
-
-/* 2. slick Nav */
-// mobile_menu
-    var menu = $('ul#navigation');
-    if(menu.length){
-      menu.slicknav({
-        prependTo: ".mobile_menu",
-        closedSymbol: '+',
-        openedSymbol:'-'
-      });
-    };
-
-// Weekly-2 Acticve
-    $('.weekly-news-active').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay:true,
-        initialSlide: 3,
-        loop:true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: false,
-            }
-          },
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
-    });
-
-    // Weekly-2 Acticve
-    $('.weekly2-news-active').slick({
-        dots: true,
-        infinite: true,
-        speed: 600,
-        arrows: false,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay:true,
-        initialSlide: 3,
-        loop:true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: false,
-            }
-          },
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots: false
-            }
-          }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
-    });
-
-    // recent-active
-    $('.recent-active').slick({
-        dots: true,
-        infinite: true,
-        speed: 600,
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: '<button type="button" class="slick-prev"> <span class="flaticon-arrow"></span></button>',
-        nextArrow: '<button type="button" class="slick-next"> <span class="flaticon-arrow"><span></button>',
-        autoplay:true,
-        initialSlide: 3,
-        loop:true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: false,
-            }
-          },
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
-    });
-
-/* 5. Video area Active */
-    $('.video-items-active').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      fade: true,
-      asNavFor:'.testmonial-nav'
-    });
-    $('.testmonial-nav').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      asNavFor: '.video-items-active',
-      dots: false,
-      prevArrow: '<button type="button" class="slick-prev"><span class="ti-arrow-left"></<span></button>',
-      nextArrow: '<button type="button" class="slick-next"><span class="ti-arrow-right"></span></button>',
-      centerMode: true,
-      focusOnSelect: true,
-      centerPadding:0,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            infinite: true,
-            dots: false,
-          }
-        },
-        {
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-
-
-
-
-    });
-
-
-/* 5. Gallery Active */
-    var client_list = $('.completed-active');
-    if(client_list.length){
-      client_list.owlCarousel({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        loop: true,
-        autoplay:true,
-        speed: 3000,
-        smartSpeed:2000,
-        nav: false,
-        dots: false,
-        margin: 15,
-
-        autoplayHoverPause: true,
-        responsive : {
-          0 : {
-            items: 1
-          },
-          768 : {
-            items: 2
-          },
-          992 : {
-            items: 2
-          },
-          1200:{
-            items: 3
-          }
-        }
-      });
-    }
-
-
-/* 6. Nice Selectorp  */
-  var nice_Select = $('select');
-    if(nice_Select.length){
-      nice_Select.niceSelect();
-    }
-
-/* 7.  Custom Sticky Menu  */
-    $(window).on('scroll', function () {
-      var scroll = $(window).scrollTop();
-      if (scroll < 245) {
-        $(".header-sticky ").removeClass("sticky-bar");
-      } else {
-        $(".header-sticky").addClass("sticky-bar");
-      }
-    });
-
-    /*   Show img flex  */
-    $(window).on('scroll', function () {
-      var scroll = $(window).scrollTop();
-      if (scroll < 245) {
-        $(".header-flex").removeClass("sticky-flex");
-      } else {
-        $(".header-flex").addClass("sticky-flex");
-      }
-    });
-
-    $(window).on('scroll', function () {
-      var scroll = $(window).scrollTop();
-      if (scroll < 245) {
-          $(".header-sticky").removeClass("sticky");
-      } else {
-          $(".header-sticky").addClass("sticky");
-      }
-    });
-
-
-
-/* 8. sildeBar scroll */
-    $.scrollUp({
-      scrollName: 'scrollUp', // Element ID
-      topDistance: '300', // Distance from top before showing element (px)
-      topSpeed: 300, // Speed back to top (ms)
-      animation: 'fade', // Fade, slide, none
-      animationInSpeed: 200, // Animation in speed (ms)
-      animationOutSpeed: 200, // Animation out speed (ms)
-      scrollText: '<i class="ti-arrow-up"></i>', // Text for element
-      activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-    });
-
-
-/* 9. data-background */
-    $("[data-background]").each(function () {
-      $(this).css("background-image", "url(" + $(this).attr("data-background") + ")")
-      });
-
-
-/* 10. WOW active */
-    new WOW().init();
-
-/* 11. Datepicker */
+/* ===================================================================
     
-// 11. ---- Mailchimp js --------//  
-    function mailChimp() {
-      $('#mc_embed_signup').find('form').ajaxChimp();
-    }
-    mailChimp();
+    Author          : Valid Theme
+    Template Name   : Deluck - Business Agency & Corporate Template
+    Version         : 1.0
+    
+* ================================================================= */
+
+(function($) {
+    "use strict";
+
+    $(document).on('ready', function() {
 
 
-// 12 Pop Up Img
-    var popUp = $('.single_gallery_part, .img-pop-up');
-      if(popUp.length){
-        popUp.magnificPopup({
-          type: 'image',
-          gallery:{
-            enabled:true
-          }
+        /* ==================================================
+            # Wow Init
+         ===============================================*/
+        var wow = new WOW({
+            boxClass: 'wow', // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 0, // distance to the element when triggering the animation (default is 0)
+            mobile: true, // trigger animations on mobile devices (default is true)
+            live: true // act on asynchronously loaded content (default is true)
         });
-      }
-
-// Add class
+        wow.init();
 
 
+        /* ==================================================
+            # Smooth Scroll
+         ===============================================*/
+        $("body").scrollspy({
+            target: ".navbar-collapse",
+            offset: 200
+        });
+        $('a.smooth-menu').on('click', function(event) {
+            var $anchor = $(this);
+            var headerH = '75';
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top - headerH + "px"
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
 
 
-$('.sticky-logo').addClass('info-open');
+        /* ==================================================
+            # Banner Animation
+        ===============================================*/
+        function doAnimations(elems) {
+            //Cache the animationend event in a variable
+            var animEndEv = 'webkitAnimationEnd animationend';
+            elems.each(function() {
+                var $this = $(this),
+                    $animationType = $this.data('animation');
+                $this.addClass($animationType).one(animEndEv, function() {
+                    $this.removeClass($animationType);
+                });
+            });
+        }
+
+        //Variables on page load
+        var $immortalCarousel = $('.animate_text'),
+            $firstAnimatingElems = $immortalCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+        //Initialize carousel
+        $immortalCarousel.carousel();
+        //Animate captions in first slide on page load
+        doAnimations($firstAnimatingElems);
+        //Other slides to be animated on carousel slide event
+        $immortalCarousel.on('slide.bs.carousel', function(e) {
+            var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
+            doAnimations($animatingElems);
+        });
 
 
-// Remove clas
-$('.close-icon').click(function(){
-  $('.extra-inofo-bar').removeClass('info-open');
-})
+        /* ==================================================
+            # Equal Height Init
+        ===============================================*/
+        $(window).on('resize', function() {
+            $(".equal-height").equalHeights();
+        });
+
+        $(".equal-height").equalHeights().find("img, iframe, object").on('load', function() {
+            $(".equal-height").equalHeights();
+        });
 
 
+        /* ==================================================
+            # imagesLoaded active
+        ===============================================*/
+        $('#portfolio-grid,.blog-masonry').imagesLoaded(function() {
 
-})(jQuery);
+            /* Filter menu */
+            $('.mix-item-menu').on('click', 'button', function() {
+                var filterValue = $(this).attr('data-filter');
+                $grid.isotope({
+                    filter: filterValue
+                });
+            });
+
+            /* filter menu active class  */
+            $('.mix-item-menu button').on('click', function(event) {
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+                event.preventDefault();
+            });
+
+            /* Filter active */
+            var $grid = $('#portfolio-grid').isotope({
+                itemSelector: '.pf-item',
+                percentPosition: true,
+                masonry: {
+                    columnWidth: '.pf-item',
+                }
+            });
+
+            /* Filter active */
+            $('.blog-masonry').isotope({
+                itemSelector: '.blog-item',
+                percentPosition: true,
+                masonry: {
+                    columnWidth: '.blog-item',
+                }
+            });
+
+        });
+
+
+         /* ==================================================
+            # Fun Factor Init
+        ===============================================*/
+        $('.timer').countTo();
+        $('.fun-fact').appear(function() {
+            $('.timer').countTo();
+        }, {
+            accY: -100
+        });
+
+
+        /* ==================================================
+            # Magnific popup init
+         ===============================================*/
+        $(".popup-link").magnificPopup({
+            type: 'image',
+            // other options
+        });
+
+        $(".popup-gallery").magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            },
+            // other options
+        });
+
+        $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
+            type: "iframe",
+            mainClass: "mfp-fade",
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+        });
+
+        $('.magnific-mix-gallery').each(function() {
+            var $container = $(this);
+            var $imageLinks = $container.find('.item');
+
+            var items = [];
+            $imageLinks.each(function() {
+                var $item = $(this);
+                var type = 'image';
+                if ($item.hasClass('magnific-iframe')) {
+                    type = 'iframe';
+                }
+                var magItem = {
+                    src: $item.attr('href'),
+                    type: type
+                };
+                magItem.title = $item.data('title');
+                items.push(magItem);
+            });
+
+            $imageLinks.magnificPopup({
+                mainClass: 'mfp-fade',
+                items: items,
+                gallery: {
+                    enabled: true,
+                    tPrev: $(this).data('prev-text'),
+                    tNext: $(this).data('next-text')
+                },
+                type: 'image',
+                callbacks: {
+                    beforeOpen: function() {
+                        var index = $imageLinks.index(this.st.el);
+                        if (-1 !== index) {
+                            this.goTo(index);
+                        }
+                    }
+                }
+            });
+        });
+
+
+        /* ==================================================
+            # Services Carousel
+         ===============================================*/
+        $('.services-carousel').owlCarousel({
+            loop: false,
+            margin: 30,
+            nav: false,
+            navText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            dots: true,
+            autoplay: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+
+        /* ==================================================
+            # Services Carousel Two Colum
+         ===============================================*/
+        $('.services-carousel-col-2').owlCarousel({
+            loop: false,
+            margin: 30,
+            nav: false,
+            navText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            dots: true,
+            autoplay: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 2
+                }
+            }
+        });
+
+
+        /* ==================================================
+            # Goal Carousel
+         ===============================================*/
+        $('.goal-carousel').owlCarousel({
+            loop: false,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            items: 1,
+            navText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+        });
+
+        /* ==================================================
+            # Testimonials Carousel
+         ===============================================*/
+        $('.testimonials-carousel').owlCarousel({
+            loop: false,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            items: 1,
+            navText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+        });
+
+
+        /* ==================================================
+            # Team Carousel
+         ===============================================*/
+        $('.team-carousel').owlCarousel({
+            loop: false,
+            margin: 30,
+            nav: false,
+            navText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            dots: true,
+            autoplay: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+
+
+        /* ==================================================
+            Preloader Init
+         ===============================================*/
+        $(window).on('load', function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+
+
+        /* ==================================================
+            Nice Select Init
+         ===============================================*/
+        $('select').niceSelect();
+
+
+        /* ==================================================
+            Contact Form Validations
+        ================================================== */
+        $('.contact-form').each(function() {
+            var formInstance = $(this);
+            formInstance.submit(function() {
+
+                var action = $(this).attr('action');
+
+                $("#message").slideUp(750, function() {
+                    $('#message').hide();
+
+                    $('#submit')
+                        .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
+                        .attr('disabled', 'disabled');
+
+                    $.post(action, {
+                            name: $('#name').val(),
+                            email: $('#email').val(),
+                            phone: $('#phone').val(),
+                            comments: $('#comments').val()
+                        },
+                        function(data) {
+                            document.getElementById('message').innerHTML = data;
+                            $('#message').slideDown('slow');
+                            $('.contact-form img.loader').fadeOut('slow', function() {
+                                $(this).remove()
+                            });
+                            $('#submit').removeAttr('disabled');
+                        }
+                    );
+                });
+                return false;
+            });
+        });
+
+    }); // end document ready function
+})(jQuery); // End jQuery

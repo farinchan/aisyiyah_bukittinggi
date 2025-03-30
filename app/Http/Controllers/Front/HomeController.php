@@ -34,7 +34,7 @@ class HomeController extends Controller
 
             'banner_list' => SettingBanner::latest()->get(),
             'news' => news::with('category')->latest()->limit(4)->get(),
-            'pengumumans' => Pengumuman::latest()->limit(5)->get(),
+            'pengumumans' => Pengumuman::latest()->limit(8)->get(),
             'welcome_speech' => WelcomeSpeech::first(),
             'kajians' => Kajian::latest()->where('status', 'published')->limit(4)->get(),
             'list_album' => GalleryAlbum::latest()->limit(6)->get(),
