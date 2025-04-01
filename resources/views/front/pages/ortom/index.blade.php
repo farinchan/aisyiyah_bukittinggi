@@ -19,5 +19,13 @@
 
 @section('content')
 @include('front.partials.breadcrumb')
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
 
+    <h1>
+        {{ $ortom->name }}
+    </h1>
+    <p>
+        {!! $ortom->content !!}
+    </p>
+</div>
 @endsection

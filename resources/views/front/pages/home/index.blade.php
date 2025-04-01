@@ -15,7 +15,7 @@
 
 @section('content')
     <!-- Start Banner
-                                    ============================================= -->
+                                        ============================================= -->
     <div class="banner-area auto-height title-uppercase small-first text-light text-center">
         <div id="bootcarousel" class="carousel inc-top-heading slide carousel-fade animate_text" data-ride="carousel">
             <!-- Wrapper for slides -->
@@ -62,7 +62,7 @@
 
 
     <!-- Start Blog Area
-                ============================================= -->
+                    ============================================= -->
     <div class="blog-area default-padding bottom-less" style="padding-bottom: 0px;">"
         <div class="container">
             <div class="row">
@@ -168,7 +168,7 @@
     <!-- End Blog Area -->
 
     <!-- Start pengumuman Area
-                ============================================= -->
+                    ============================================= -->
     <div class="blog-area default-padding bottom-less bg-gray">
         <div class="container">
             <div class="row">
@@ -214,7 +214,7 @@
 
 
     <!-- Start About
-                                    ============================================= -->
+                                        ============================================= -->
     <div class="about-area default-padding ">
         <div class="container">
             <div class="row">
@@ -247,7 +247,7 @@
     <!-- End About -->
 
     <!-- Start Services
-                                    ============================================= -->
+                                        ============================================= -->
     <div class="services-area carousel-shadow half-bg inc-thumb default-padding bg-gray">
         <div class="container">
             <div class="row">
@@ -311,7 +311,7 @@
 
 
     <!-- Start Gallery
-                                    ============================================= -->
+                                        ============================================= -->
     <div class="gallery-area  default-padding">
         <div class="container">
             <div class="gallery-items-area text-center">
@@ -335,17 +335,18 @@
                             <div id="portfolio-grid" class="gallery-items col-3">
                                 <!-- Single Item -->
                                 @foreach ($list_album as $album)
-                                <div class="pf-item ">
-                                    <div class="item">
-                                        <a href="{{ route('gallery.detail', $album->slug) }}">
-                                            <img src="{{ $album->getThumbnail() }}" alt="Thumb" style="height: 300px; width: 100%; object-fit: cover;">
-                                            <div class="item-inner">
-                                                <h4>{{ $album->title }}</h4>
-                                                <p> {{ $album->created_at->diffForHumans() }}</p>
-                                            </div>
-                                        </a>
+                                    <div class="pf-item ">
+                                        <div class="item">
+                                            <a href="{{ route('gallery.detail', $album->slug) }}">
+                                                <img src="{{ $album->getThumbnail() }}" alt="Thumb"
+                                                    style="height: 300px; width: 100%; object-fit: cover;">
+                                                <div class="item-inner">
+                                                    <h4>{{ $album->title }}</h4>
+                                                    <p> {{ $album->created_at->diffForHumans() }}</p>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                                 @endforeach
                             </div>
                         </div>
@@ -358,57 +359,58 @@
 
 
 
-      <!-- Start Contact
-    ============================================= -->
-    <div class="contact-area bg-gray default-padding bg-gray">
+    <!-- Start Contact
+                ============================================= -->
+    <div class="contact-area bg-gray default-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-md-offset-5 contact-form">
                     <div class="info">
-                        <h2>Let's lalk about your idea</h2>
+                        <h2>Hubungi Kami</h2>
                         <p>
-                            Our next drew much you with rank. Tore many held age hold rose than our. She literature sentiments any contrasted. Set aware joy sense young now tears china shy.
+                            Anda dapat menghubungi kami untuk memberikan pertanyaan, saran, kritik, atau masukan melaui form
+                            di bawah ini dengan senang hati. Kami akan segera merespon pesan Anda secepatnya.
                         </p>
-                        <form action="assets/mail/contact.php" method="POST" class="contact-form">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text">
-                                        <span class="alert-error"></span>
-                                    </div>
-                                </div>
-                            </div>
+                        <form action="{{ route('message') }}" method="POST" id="contact_form">
+                            @csrf
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" id="email" name="email" placeholder="Email*" type="email">
-                                        <span class="alert-error"></span>
+                                        <input class="form-control" name="name" placeholder="Nama *" type="text"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
-                                        <span class="alert-error"></span>
+                                        <input class="form-control" name="email" placeholder="Email *" type="email"
+                                            required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" placeholder="Subjek *" type="text"
+                                            required>
+
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group comments">
-                                        <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Project *"></textarea>
+                                        <textarea class="form-control" name="message" placeholder="Masukkan Pesan Anda*" rows="5" required></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
-                                    <button type="submit" name="submit" id="submit">
-                                        Send Message <i class="fa fa-paper-plane"></i>
+                                    <button type="submit" name="send"
+                                        onclick="event.preventDefault(); document.getElementById('contact_form').submit();">
+                                        Kirim Pesan <i class="fa fa-paper-plane"></i>
                                     </button>
                                 </div>
-                            </div>
-                            <!-- Alert Message -->
-                            <div class="col-md-12 alert-notification">
-                                <div id="message" class="alert-msg"></div>
                             </div>
                         </form>
                     </div>
