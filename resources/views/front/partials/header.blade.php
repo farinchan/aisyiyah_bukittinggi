@@ -1,6 +1,6 @@
   <!-- Start Header Top
     ============================================= -->
-  <div class="top-bar-area inline inc-border" style="background: linear-gradient(90deg, #2c368b 0%, #01a54d 100%)">
+  <div class="top-bar-area inline inc-border" style="background: linear-gradient(90deg, #2c368b 0%, #64C790 100%)">
       <div class="container">
           <div class="row">
               <div class="col-md-7 address-info text-left">
@@ -20,18 +20,26 @@
                   <div class="item-flex border-less">
                       <div class="social">
                           <ul>
+                            @if ($setting_web->facebook)
                               <li>
-                                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                  <a href="{{ $setting_web->facebook }}"><i class="fab fa-facebook-f"></i></a>
                               </li>
+                            @endif
+                            @if ($setting_web->twitter)
                               <li>
-                                  <a href="#"><i class="fab fa-twitter"></i></a>
+                                  <a href="{{ $setting_web->twitter }}"><i class="fab fa-twitter"></i></a>
                               </li>
+                            @endif
+                            @if ($setting_web->instagram)
                               <li>
-                                  <a href="#"><i class="fab fa-pinterest"></i></a>
+                                  <a href="{{ $setting_web->instagram }}"><i class="fab fa-instagram"></i></a>
                               </li>
+                              @endif
+                            @if ($setting_web->youtube)
                               <li>
-                                  <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                  <a href="{{ $setting_web->youtube }}"><i class="fab fa-youtube"></i></a>
                               </li>
+                            @endif
                           </ul>
                       </div>
 
