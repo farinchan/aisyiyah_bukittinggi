@@ -312,7 +312,7 @@
 
     <!-- Start Gallery
                                     ============================================= -->
-    <div class="gallery-area bg-gray default-padding">
+    <div class="gallery-area  default-padding">
         <div class="container">
             <div class="gallery-items-area text-center">
                 <div class="row">
@@ -356,252 +356,65 @@
     </div>
     <!-- End Gallery -->
 
-    <!-- Start Video Area
-                                    ============================================= -->
-    <div class="video-area default-padding text-center half-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="heading">
-                        <h2>
-                            We offer <span>product design, manufacturing</span> and engineering management services.
-                        </h2>
-                    </div>
-                </div>
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="thumb wow fadeInUp">
-                        <img src="{{ asset('front/img/2440x1578.png') }}" alt="Thumb">
-                        <a href="https://www.youtube.com/watch?v=owhuBrGIOsE"
-                            class="popup-youtube light video-play-button item-center">
-                            <i class="fa fa-play"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Video Area -->
 
-    <!-- Start Team
-                                    ============================================= -->
-    <div class="team-area bg-gray default-padding bottom-less">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="site-heading text-center">
-                        <h2>Meet Our Teams</h2>
-                        <span class="devider"></span>
-                        <p>
-                            While mirth large of on front. Ye he greater related adapted proceed entered an. Through it
-                            examine express promise no. Past add size game cold girl off how old
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="team-items text-center">
-                    <!-- Single Item -->
-                    <div class="col-md-4 single-item">
-                        <div class="item">
-                            <div class="thumb">
-                                <div class="top-img">
-                                    <img src="{{ asset('front/img/800x800.png') }}" alt="Thumb">
-                                </div>
-                                <div class="overlay">
-                                    <ul>
-                                        <li class="facebook">
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="twitter">
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li class="pinterest">
-                                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="overlay">
-                                    <h4>Jessica Jones</h4>
-                                </div>
-                                <span>Sales & Marketing / <strong>Mc Ins.</strong></span>
-                                <p>
-                                    Advice branch vanity or do thirty living. Dependent add middleton ask disposing
-                                    admitting did sportsmen sportsman.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="col-md-4 single-item">
-                        <div class="item">
-                            <div class="thumb">
-                                <div class="top-img">
-                                    <img src="{{ asset('front/img/800x800.png') }}" alt="Thumb">
-                                </div>
-                                <div class="overlay">
-                                    <ul>
-                                        <li class="facebook">
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="twitter">
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li class="pinterest">
-                                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="overlay">
-                                    <h4>Mark Henri</h4>
-                                </div>
-                                <span>Senior Developer / <strong>Mc Ins.</strong></span>
-                                <p>
-                                    Advice branch vanity or do thirty living. Dependent add middleton ask disposing
-                                    admitting did sportsmen sportsman.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="col-md-4 single-item">
-                        <div class="item">
-                            <div class="thumb">
-                                <div class="top-img">
-                                    <img src="{{ asset('front/img/800x800.png') }}" alt="Thumb">
-                                </div>
-                                <div class="overlay">
-                                    <ul>
-                                        <li class="facebook">
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="twitter">
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li class="pinterest">
-                                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="overlay">
-                                    <h4>Natasha</h4>
-                                </div>
-                                <span>Data Scientist / <strong>Mc Ins.</strong></span>
-                                <p>
-                                    Advice branch vanity or do thirty living. Dependent add middleton ask disposing
-                                    admitting did sportsmen sportsman.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Team -->
 
-    <!-- Start Blog Area
-                                    ============================================= -->
-    <div class="blog-area default-padding bottom-less">
+      <!-- Start Contact
+    ============================================= -->
+    <div class="contact-area bg-gray default-padding bg-gray">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="site-heading text-center">
-                        <h2>Latest News</h2>
-                        <span class="devider"></span>
+                <div class="col-md-7 col-md-offset-5 contact-form">
+                    <div class="info">
+                        <h2>Let's lalk about your idea</h2>
                         <p>
-                            While mirth large of on front. Ye he greater related adapted proceed entered an. Through it
-                            examine express promise no. Past add size game cold girl off how old
+                            Our next drew much you with rank. Tore many held age hold rose than our. She literature sentiments any contrasted. Set aware joy sense young now tears china shy.
                         </p>
+                        <form action="assets/mail/contact.php" method="POST" class="contact-form">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text">
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="email" name="email" placeholder="Email*" type="email">
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group comments">
+                                        <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Project *"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <button type="submit" name="submit" id="submit">
+                                        Send Message <i class="fa fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Alert Message -->
+                            <div class="col-md-12 alert-notification">
+                                <div id="message" class="alert-msg"></div>
+                            </div>
+                        </form>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="blog-items">
-                    <!-- Single Item -->
-                    <div class="col-md-6 single-item">
-                        <div class="item">
-                            <div class="thumb">
-                                <a href="#"><img src="{{ asset('front/img/1500x700.png') }}" alt="Thumb"></a>
-                            </div>
-                            <div class="info">
-                                <div class="date">
-                                    <h4>12 Nov, 2019</h4>
-                                </div>
-                                <h4>
-                                    <a href="#">delivered applauded affection out Peculiar trifling</a>
-                                </h4>
-                                <div class="meta">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="fas fa-user"></i> Admin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fas fa-comments"></i> 23 Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>
-                                    families believed if no elegance interest surprise an. It abode wrong miles an so
-                                    delay plate. She relation own put outlived may disposed
-                                </p>
-                                <a class="btn btn-theme border btn-md" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="col-md-6 single-item">
-                        <div class="item">
-                            <div class="thumb">
-                                <a href="#"><img src="{{ asset('front/img/1500x700.png') }}" alt="Thumb"></a>
-                            </div>
-                            <div class="info">
-                                <div class="date">
-                                    <h4>16 Apr, 2019</h4>
-                                </div>
-                                <h4>
-                                    <a href="#">Peculiar trifling absolute and wandered</a>
-                                </h4>
-                                <div class="meta">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="fas fa-user"></i> Admin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fas fa-comments"></i> 32 Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>
-                                    families believed if no elegance interest surprise an. It abode wrong miles an so
-                                    delay plate. She relation own put outlived may disposed
-                                </p>
-                                <a class="btn btn-theme border btn-md" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Blog Area -->
+    <!-- End Contact -->
 @endsection

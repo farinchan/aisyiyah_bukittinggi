@@ -4323,7 +4323,7 @@ body,
   content: "";
   height: 100%;
   width: 50%;
-  background: url(front/img/side-bg.svg);
+  background: url(img/side-bg.svg);
   z-index: -1;
 }
 
@@ -4919,7 +4919,7 @@ footer .twitter-widget .twitter-item:last-child {
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background: url(assets/img/preloader.gif) center no-repeat #fff;
+  background: url(/front/img/preloader.gif) center no-repeat #fff;
   text-align: center;
 }
 
