@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\NewsComment;
@@ -35,13 +36,13 @@ class NewsController extends Controller
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 
-            'category' => '',
             'latest_news' => $news->limit(4)->get(),
             'categories' => $newsCategory->get(),
             'list_news' => $news->where(function ($query) use ($search) {
                 $query->where('title', 'like', '%' . $search . '%')
                     ->orWhere('content', 'like', '%' . $search . '%');
             })->paginate(6),
+            'gallery_latest' => Gallery::where('type', 'foto')->latest()->limit(6)->get(),
         ];
 
         return view('front.pages.news.index', $data);
@@ -66,6 +67,7 @@ class NewsController extends Controller
 
             'categories' => $newsCategory->get(),
             'latest_news' => news::latest()->limit(4)->get(),
+            'gallery_latest' => Gallery::where('type', 'foto')->latest()->limit(6)->get(),
             'news' => $news,
             'comments' => NewsComment::with('user', 'children')->where('news_id', $news->id)->where('parent_id', null)->get(),
             'next_news' => News::where('id', '>', $news->id)->first(),
@@ -119,8 +121,9 @@ class NewsController extends Controller
             'setting_web' => $setting_web,
 
             'category' => $newsCategory->where('slug', $slug)->first(),
-            'categories' => $newsCategory->get(),
-            'latest_news' => $news->limit(4)->get(),
+            'gallery_latest' => Gallery::where('type', 'foto')->latest()->limit(6)->get(),
+            'categories' => NewsCategory::with('news')->get(),
+            'latest_news' => News::latest()->limit(4)->get(),
             'list_news' => $news->where(function ($query) use ($search) {
                 $query->where('title', 'like', '%' . $search . '%')
                     ->orWhere('content', 'like', '%' . $search . '%');

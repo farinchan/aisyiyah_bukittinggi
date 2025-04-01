@@ -68,7 +68,7 @@
                                             <tr>
                                                 <td><a class="text-gray-800 text-hover-primary fw-bold" href="{{ route('news.detail', $item_news_popular->slug) }}">{{ $item_news_popular->title }}</a></td>
                                                 <td class="text-center">{{ $item_news_popular->viewers_count }}</td>
-                                                <td class="text-center">{{ $item_news_popular->comments->count() }}</td>    
+                                                <td class="text-center">{{ $item_news_popular->comments->count() }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -101,7 +101,7 @@
                                             <tr>
                                                 <td><a class="text-gray-800 text-hover-primary fw-bold" href="{{ route('news.detail', $item_news_new->slug) }}">{{ $item_news_new->title }}</a></td>
                                                 <td class="text-center">{{ $item_news_new->viewers->count() }}</td>
-                                                <td class="text-center">{{ $item_news_new->comments->count() }}</td>    
+                                                <td class="text-center">{{ $item_news_new->comments->count() }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -127,7 +127,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+
                                     </tbody>
                                 </table>
                             </div>

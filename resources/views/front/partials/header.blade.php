@@ -127,7 +127,7 @@
                           </ul>
                       </li>
                       <li class="dropdown @if (request()->routeIs('news.*')) active @endif">
-                          <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Berita</a>
+                          <a href="{{ route("news") }}" class="dropdown-toggle active" data-toggle="dropdown">Berita</a>
                           <ul class="dropdown-menu">
                               @php
                                   $categories = \App\Models\NewsCategory::all();

@@ -73,7 +73,9 @@
     <script src="{{ asset('front/js/bootsnav.js') }}"></script>
     <script src="{{ asset('front/js/main.js') }}"></script>
 
+    @include('sweetalert::alert')
     @yield('scripts')
+
 
 </body>
 
