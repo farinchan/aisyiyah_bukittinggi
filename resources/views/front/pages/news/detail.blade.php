@@ -24,8 +24,9 @@
 @endsection
 
 @section('content')
+    @include('front.partials.breadcrumb')
     <!-- Start Blog
-                        ============================================= -->
+                            ============================================= -->
     <div class="blog-area single full-blog right-sidebar default-padding">
         <div class="container">
             <div class="row">
@@ -63,7 +64,8 @@
                                                 {{ $news->viewers->count() }} Dilihat</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('news.category', $news->category->slug) }}"><i class="fas fa-tag"></i>
+                                            <a href="{{ route('news.category', $news->category->slug) }}"><i
+                                                    class="fas fa-tag"></i>
                                                 {{ $news->category->name }}</a>
                                         </li>
                                     </ul>
@@ -199,7 +201,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group comments">
                                                         <!-- Comment -->
-                                                        <textarea class="form-control" placeholder="Komentar" name="comment" id="comment"    required></textarea>
+                                                        <textarea class="form-control" placeholder="Komentar" name="comment" id="comment" required></textarea>
                                                     </div>
                                                     <div class="form-group full-width submit">
                                                         <button type="submit">

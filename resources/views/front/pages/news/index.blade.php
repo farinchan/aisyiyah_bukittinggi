@@ -14,8 +14,9 @@
 @endsection
 
 @section('content')
+    @include('front.partials.breadcrumb')
     <!-- Start Blog
-                                        ============================================= -->
+                                            ============================================= -->
     <div class="blog-area full-blog right-sidebar default-padding">
         <div class="container">
             <div class="row">
@@ -27,7 +28,6 @@
                                 <h2 style="margin-bottom: 5px;">Kategori {{ $category->name }}</h2>
                                 <p>{{ $category->description }}</p>
                             </div>
-
                         @endisset
                         @foreach ($list_news as $news)
                             <div class="single-item">
@@ -59,7 +59,8 @@
                                                         {{ $news->viewers->count() }} Dilihat</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('news.category', $news->category->slug) }}"><i class="fas fa-tag"></i>
+                                                    <a href="{{ route('news.category', $news->category->slug) }}"><i
+                                                            class="fas fa-tag"></i>
                                                         {{ $news->category->name }}</a>
                                                 </li>
                                             </ul>
@@ -173,7 +174,8 @@
                                                 </a>
                                             </div>
                                             <div class="info">
-                                                <a href="{{ route('news.detail', $newsLatest->slug) }}">{{ $newsLatest->title }}</a>
+                                                <a
+                                                    href="{{ route('news.detail', $newsLatest->slug) }}">{{ $newsLatest->title }}</a>
                                                 <div class="meta-title">
                                                     <span class="post-date">
                                                         {{ \Carbon\Carbon::parse($newsLatest->created_at)->format('d M, Y') }}</span>
@@ -197,7 +199,6 @@
                                                     <img src="{{ $gallery->getFoto() }}" alt="thumb">
                                                 </a>
                                             </li>
-
                                         @endforeach
                                     </ul>
                                 </div>
@@ -215,26 +216,26 @@
                                                 </a>
                                             </li>
                                         @endif
-                                        @if($setting_web->twitter)
-                                        <li class="twitter">
-                                            <a href="{{ $setting_web->twitter }}">
-                                                <i class="fab fa-twitter"></i>
-                                            </a>
-                                        </li>
+                                        @if ($setting_web->twitter)
+                                            <li class="twitter">
+                                                <a href="{{ $setting_web->twitter }}">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
                                         @endif
-                                        @if($setting_web->youtube)
-                                        <li class="pinterest">
-                                            <a href="{{ $setting_web->youtube }}">
-                                                <i class="fab fa-youtube"></i>
-                                            </a>
-                                        </li>
+                                        @if ($setting_web->youtube)
+                                            <li class="pinterest">
+                                                <a href="{{ $setting_web->youtube }}">
+                                                    <i class="fab fa-youtube"></i>
+                                                </a>
+                                            </li>
                                         @endif
-                                        @if($setting_web->instagram)
-                                        <li class="pinterest">
-                                            <a href="{{ $setting_web->instagram }}">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </li>
+                                        @if ($setting_web->instagram)
+                                            <li class="pinterest">
+                                                <a href="{{ $setting_web->instagram }}">
+                                                    <i class="fab fa-instagram"></i>
+                                                </a>
+                                            </li>
                                         @endif
                                     </ul>
                                 </div>
