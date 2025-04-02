@@ -67,7 +67,7 @@
     <script src="{{ asset('front/js/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('front/js/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('front/js/count-to.js') }}"></script>
-    <script src="{{ asset('front/js/jquery.nice-select.min.js') }}"></script>
+    {{-- <script src="{{ asset('front/js/jquery.nice-select.min.js') }}"></script> --}}
     <script src="{{ asset('front/js/Chart.min.js') }}"></script>
     <script src="{{ asset('front/js/custom-chart.js') }}"></script>
     <script src="{{ asset('front/js/bootsnav.js') }}"></script>
