@@ -175,7 +175,17 @@
                                                 <td>
                                                     <p class="font-weight-bold"
                                                         style="font-weight: 700; font-size: 14px; margin-bottom: 5px;">
-                                                        {{ $kajian->title }}</p>
+                                                        {{ $kajian->title }}
+                                                        <span class="badge "
+                                                        style="
+                                                        @if ($kajian->status == 'published') background-color: #28a745;
+                                                        @elseif ($kajian->status == 'draft') background-color: #ffc107;
+                                                        @elseif ($kajian->status == 'archived') background-color: #6c757d;
+                                                        @endif
+                                                        "
+                                                            style="font-size: 12px; margin-left: 5px;">
+                                                            {{ $kajian->status }}</span>
+                                                    </p>
                                                     <small style="color: #6c757d; margin-bottom: 10px;">
                                                         <i class="fa fa-comments"></i>
                                                         {{ $kajian->kajianComment->count() }} Komentar |

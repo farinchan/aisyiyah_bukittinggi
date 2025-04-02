@@ -54,7 +54,7 @@ class KajianController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
                 'title' => 'required',
                 'content' => 'required',
                 'tags' => 'nullable',
@@ -63,7 +63,7 @@ class KajianController extends Controller
                 'required' => ':attribute wajib diisi',
                 'image' => ':attribute harus berupa gambar',
                 'mimes' => ':attribute harus berupa gambar dengan format jpeg, png, jpg, gif, svg',
-                'max' => ':attribute maksimal 2MB',
+                'max' => ':attribute maksimal 10MB',
 
             ]
         );
@@ -86,6 +86,11 @@ class KajianController extends Controller
             $kajian->thumbnail = str_replace('public/', '', $thumbnailPath);
         }
 
+        $kajian->meta_title = $request->title;
+        $kajian->meta_description = Str::limit(strip_tags($request->content), 200);
+        $kajian->meta_keywords = $request->tags ? implode(", ", array_column(json_decode($request->tags??"['content']"), 'value')) : null;
+
+        $kajian->status = 'published';
         $kajian->save();
 
         Alert::success('Success', 'Data berhasil disimpan');
@@ -123,7 +128,7 @@ class KajianController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
                 'title' => 'required',
                 'content' => 'required',
                 'tags' => 'nullable',
@@ -132,7 +137,7 @@ class KajianController extends Controller
                 'required' => ':attribute wajib diisi',
                 'image' => ':attribute harus berupa gambar',
                 'mimes' => ':attribute harus berupa gambar dengan format jpeg, png, jpg, gif, svg',
-                'max' => ':attribute maksimal 2MB',
+                'max' => ':attribute maksimal 10MB',
 
             ]
         );
@@ -152,6 +157,9 @@ class KajianController extends Controller
             $thumbnailPath = $thumbnail->storeAs('public/kajian', time() . '_' . Auth::user()->id . '_' . $thumbnail->getClientOriginalExtension());
             $kajian->thumbnail = $thumbnailPath;
         }
+        $kajian->meta_title = $request->title;
+        $kajian->meta_description = Str::limit(strip_tags($request->content), 200);
+        $kajian->meta_keywords = $request->tags ? implode(", ", array_column(json_decode($request->tags??"['content']"), 'value')) : null;
 
         $kajian->save();
 
