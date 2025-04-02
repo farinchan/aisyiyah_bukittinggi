@@ -17,8 +17,18 @@ class KeanggotaanController extends Controller
 
         $data = [
             'title' => "Keanggotaan | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Keanggotaan',
+                    'link' => route('keanggotaan'),
+                ],
+            ],
             'meta_description' => strip_tags($setting_web->about),
-            'meta_keywords' => 'Keanggotaan, Muhammadiyah, Bukittinggi',
+            'meta_keywords' => 'Keanggotaan, Muhammadiyah, Bukittinggi, Aisyiyah',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 
@@ -41,9 +51,23 @@ class KeanggotaanController extends Controller
         $anggota = User::with(['kajian'])->find($id);
 
         $data = [
-            'title' => 'Detail Anggota | ' . $setting_web->name,
+            'title' => $anggota->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Keanggotaan',
+                    'link' => route('keanggotaan'),
+                ],
+                [
+                    'name' => 'Detail Anggota',
+                    'link' => route('keanggotaan.detail', $anggota->id),
+                ],
+            ],
             'meta_description' => 'Detail Anggota',
-            'meta_keywords' => 'Detail Anggota',
+            'meta_keywords' => 'Detail Anggota, Muhammadiyah, Bukittinggi, Aisyiyah',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 

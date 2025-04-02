@@ -420,3 +420,18 @@
     </div>
     <!-- End Contact -->
 @endsection
+
+@section('scripts')
+<script>
+    $.ajax({
+        url: "{{ route('visit.ajax') }}",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+</script>
+    @endsection

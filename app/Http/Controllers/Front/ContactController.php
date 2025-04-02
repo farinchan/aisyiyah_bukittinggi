@@ -12,9 +12,19 @@ class ContactController extends Controller
     {
         $setting_web = SettingWebsite::first();
         $data = [
-            'title' => "Contact Us | " . $setting_web->name,
-            'meta_description' => "Contact Us",
-            'meta_keywords' => 'Contact Us',
+            'title' => "Kontak Kami | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Kontak',
+                    'link' => route('contact'),
+                ],
+            ],
+            'meta_description' => "Kontak Kami pada alamat " . $setting_web->address . " dan nomor telepon " . $setting_web->phone . " atau email " . $setting_web->email,
+            'meta_keywords' => 'Contact Us, Aisyiyah, Bukittinggi',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
         ];

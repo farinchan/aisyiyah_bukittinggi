@@ -17,6 +17,7 @@
 @endsection
 
 @section('content')
+@include('front.partials.breadcrumb')
     <!-- Start Blog
                 ============================================= -->
     <div class="blog-area single full-blog default-padding">

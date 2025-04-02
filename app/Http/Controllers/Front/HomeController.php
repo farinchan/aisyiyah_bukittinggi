@@ -28,7 +28,7 @@ class HomeController extends Controller
         $data = [
             'title' => "Home | " . $setting_web->name,
             'meta_description' => strip_tags($setting_web->about),
-            'meta_keywords' => 'Home, Muhammadiyah, Bukittinggi',
+            'meta_keywords' => 'Home, Muhammadiyah, Bukittinggi, Aisyiyah',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 

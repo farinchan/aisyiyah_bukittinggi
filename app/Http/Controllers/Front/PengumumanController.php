@@ -17,8 +17,18 @@ class PengumumanController extends Controller
             ->where('status', 'published');
         $data = [
             'title' => "Pengumuman | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Pengumuman',
+                    'link' => route('pengumuman.detail'),
+                ],
+            ],
             'meta_description' => strip_tags($setting_web->about),
-            'meta_keywords' => 'Pengumuman, Muhammadiyah, Bukittinggi',
+            'meta_keywords' => 'Pengumuman, Muhammadiyah, Bukittinggi, Aisyiyah',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 
@@ -40,8 +50,22 @@ class PengumumanController extends Controller
 
         $data = [
             'title' => $pengumuman->title . " | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Pengumuman',
+                    'link' => null,
+                ],
+                [
+                    'name' => 'Detail Pengumuman',
+                    'link' => route('pengumuman.detail', $pengumuman->slug),
+                ],
+            ],
             'meta_description' => strip_tags($pengumuman->content),
-            'meta_keywords' => 'Pengumuman, Muhammadiyah, Bukittinggi',
+            'meta_keywords' => 'Pengumuman, Muhammadiyah, Aisyiyah, Bukittinggi, ' . $pengumuman->meta_keywords,
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 

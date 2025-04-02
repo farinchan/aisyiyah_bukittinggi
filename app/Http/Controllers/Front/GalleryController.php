@@ -16,7 +16,21 @@ class GalleryController extends Controller
             ->firstOrFail();
 
         $data = [
-            'title' => $album->name,
+            'title' => $album->title,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Gallery',
+                    'link' => null,
+                ],
+                [
+                    'name' => 'Detail Gallery',
+                    'link' => route('gallery.detail', $album->slug),
+                ],
+            ],
             'meta_description' => strip_tags($album->description),
             'meta_keywords' => $album->name,
             'favicon' => $album->getThumbnail(),

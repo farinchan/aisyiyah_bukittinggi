@@ -18,11 +18,25 @@ class ProfileController extends Controller
 
         $data = [
             'title' => $profil->name . " | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Profile',
+                    'link' => null,
+                ],
+                [
+                    'name' => $profil->name,
+                    'link' => route('profile', $profil->slug),
+                ],
+            ],
             'meta_description' => Str::limit(strip_tags($profil->content), 300),
-            'meta_keywords' => $profil->name . ', Muhammadiyah, Bukittinggi',
+            'meta_keywords' => $profil->name . ', Muhammadiyah, Bukittinggi, Aisyiyah, Profile',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
-            
+
             'profile' => $profil
         ];
 

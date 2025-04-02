@@ -30,9 +30,19 @@ class NewsController extends Controller
 
 
         $data = [
-            'title' => "News | " . $setting_web->name,
+            'title' => "Berita | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Berita',
+                    'link' => route('news'),
+                ],
+            ],
             'meta_description' => strip_tags($setting_web->about),
-            'meta_keywords' => 'News, Muhammadiyah, Bukittinggi',
+            'meta_keywords' => 'News, Muhammadiyah, Bukittinggi, Aisyiyah',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 
@@ -58,9 +68,23 @@ class NewsController extends Controller
 
 
         $data = [
-            'title' => $news->title . " | " . $setting_web->name,
+            'title' => $news->title,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Berita',
+                    'link' => route('news'),
+                ],
+                [
+                    'name' => 'Detail Berita',
+                    'link' => route('news.detail', $news->slug),
+                ],
+            ],
             'meta_description' => $news->meta_description,
-            'meta_keywords' => 'News, Muhammadiyah, Bukittinggi, ' . $news->meta_keywords,
+            'meta_keywords' => 'News, Muhammadiyah, Bukittinggi, Aisyiyah, ' . $news->meta_keywords,
             'favicon' => $setting_web->favicon,
             'image' => $news->thumbnail,
             'setting_web' => $setting_web,
@@ -114,9 +138,23 @@ class NewsController extends Controller
 
 
         $data = [
-            'title' => "News - " . $newsCategory->where('slug', $slug)->first()->name ." | " . $setting_web->name,
+            'title' => "Kategori Berita - " . $newsCategory->where('slug', $slug)->first()->name ." | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Berita',
+                    'link' => route('news'),
+                ],
+                [
+                    'name' => $newsCategory->where('slug', $slug)->first()->name,
+                    'link' => null,
+                ],
+            ],
             'meta_description' => strip_tags($setting_web->about),
-            'meta_keywords' => 'News, Muhammadiyah, Bukittinggi',
+            'meta_keywords' => 'News, Muhammadiyah, Bukittinggi, Aisyiyah, ',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
 

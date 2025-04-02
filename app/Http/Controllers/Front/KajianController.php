@@ -22,10 +22,20 @@ class KajianController extends Controller
         $kajian = Kajian::latest()->where('status', 'published');
         $setting_web = SettingWebsite::first();
         $data = [
-            'title' => 'Kajian',
+            'title' => 'Kajian | ' . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Kajian',
+                    'link' => route('kajian'),
+                ],
+            ],
             'metaTitle' => 'Kajian',
             'metaDescription' => 'Kajian',
-            'metaKeywords' => 'Kajian',
+            'metaKeywords' => 'Kajian, Muhammadiyah, Bukittinggi, Aisyiyah',
             'url' => 'kajian',
             'setting_web' => $setting_web,
 
@@ -47,6 +57,20 @@ class KajianController extends Controller
 
         $data = [
             'title' => $kajian->title,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Kajian',
+                    'link' => route('kajian'),
+                ],
+                [
+                    'name' => 'Detail Kajian',
+                    'link' => route('kajian.detail', $kajian->slug),
+                ],
+            ],
             'meta_description' => $kajian->meta_description,
             'meta_keywords' => 'Kajian, Muhammadiyah, Bukittinggi, ' . $kajian->meta_keywords,
             'favicon' => $setting_web->favicon,

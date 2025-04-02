@@ -15,6 +15,16 @@ class AssetController extends Controller
         $setting_web = SettingWebsite::first();
         $data = [
             'title' => "Aset | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Aset',
+                    'link' => route('asset'),
+                ],
+            ],
             'meta_description' => strip_tags($setting_web->about),
             'meta_keywords' => 'aset, Muhammadiyah, Bukittinggi',
             'favicon' => $setting_web->favicon,

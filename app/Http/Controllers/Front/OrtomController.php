@@ -18,11 +18,25 @@ class OrtomController extends Controller
 
         $data = [
             'title' => $ortom->name . " | " . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Ortom',
+                    'link' => null,
+                ],
+                [
+                    'name' => $ortom->name,
+                    'link' => route('ortom.detail', $ortom->slug),
+                ],
+            ],
             'meta_description' => Str::limit(strip_tags($ortom->content), 300),
-            'meta_keywords' => $ortom->name . ', Muhammadiyah, Bukittinggi',
+            'meta_keywords' => $ortom->name . ', Muhammadiyah, Bukittinggi, Aisyiyah, Ortom',
             'favicon' => $setting_web->favicon,
             'setting_web' => $setting_web,
-            
+
             'ortom' => $ortom
         ];
 

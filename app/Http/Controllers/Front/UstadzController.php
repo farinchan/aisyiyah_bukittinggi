@@ -16,6 +16,16 @@ class UstadzController extends Controller
 
         $data = [
             'title' => 'Cari Ustadz | ' . $setting_web->name,
+            'breadcrumbs' => [
+                [
+                    'name' => 'Home',
+                    'link' => route('home'),
+                ],
+                [
+                    'name' => 'Cari Ustadz',
+                    'link' => null,
+                ],
+            ],
             'meta_description' => 'Cari Ustadz',
             'meta_keywords' => 'Cari Ustadz',
             'favicon' => $setting_web->favicon,
@@ -28,8 +38,8 @@ class UstadzController extends Controller
             ->get(),
         ];
 
-        return view('front.pages.ustadz.search', $data);        
+        return view('front.pages.ustadz.search', $data);
     }
 
-    
+
 }
