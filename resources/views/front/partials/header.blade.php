@@ -20,26 +20,26 @@
                   <div class="item-flex border-less">
                       <div class="social">
                           <ul>
-                            @if ($setting_web->facebook)
-                              <li>
-                                  <a href="{{ $setting_web->facebook }}"><i class="fab fa-facebook-f"></i></a>
-                              </li>
-                            @endif
-                            @if ($setting_web->twitter)
-                              <li>
-                                  <a href="{{ $setting_web->twitter }}"><i class="fab fa-twitter"></i></a>
-                              </li>
-                            @endif
-                            @if ($setting_web->instagram)
-                              <li>
-                                  <a href="{{ $setting_web->instagram }}"><i class="fab fa-instagram"></i></a>
-                              </li>
+                              @if ($setting_web->facebook)
+                                  <li>
+                                      <a href="{{ $setting_web->facebook }}"><i class="fab fa-facebook-f"></i></a>
+                                  </li>
                               @endif
-                            @if ($setting_web->youtube)
-                              <li>
-                                  <a href="{{ $setting_web->youtube }}"><i class="fab fa-youtube"></i></a>
-                              </li>
-                            @endif
+                              @if ($setting_web->twitter)
+                                  <li>
+                                      <a href="{{ $setting_web->twitter }}"><i class="fab fa-twitter"></i></a>
+                                  </li>
+                              @endif
+                              @if ($setting_web->instagram)
+                                  <li>
+                                      <a href="{{ $setting_web->instagram }}"><i class="fab fa-instagram"></i></a>
+                                  </li>
+                              @endif
+                              @if ($setting_web->youtube)
+                                  <li>
+                                      <a href="{{ $setting_web->youtube }}"><i class="fab fa-youtube"></i></a>
+                                  </li>
+                              @endif
                           </ul>
                       </div>
 
@@ -63,8 +63,8 @@
               <div class="row">
                   <div class="top-search">
                       <div class="input-group">
-                          <form action="#">
-                              <input type="text" name="text" class="form-control" placeholder="Search">
+                          <form action="{{ route('keanggotaan') }}" method="GET">
+                              <input type="text" name="nama" class="form-control" placeholder="Cari Anggota">
                               <button type="submit">
                                   <i class="fas fa-search"></i>
                               </button>
@@ -110,7 +110,8 @@
                       <i class="fa fa-bars"></i>
                   </button>
                   <a class="navbar-brand" href="index.html">
-                      <img src="{{ Storage::url($setting_web->logo) }}" class="logo" alt="Logo" style="height: 50px">
+                      <img src="{{ Storage::url($setting_web->logo) }}" class="logo" alt="Logo"
+                          style="height: 50px">
                   </a>
               </div>
               <!-- End Header Navigation -->
@@ -135,7 +136,8 @@
                           </ul>
                       </li>
                       <li class="dropdown @if (request()->routeIs('news.*')) active @endif">
-                          <a href="{{ route("news") }}" class="dropdown-toggle active" data-toggle="dropdown">Berita</a>
+                          <a href="{{ route('news') }}" class="dropdown-toggle active"
+                              data-toggle="dropdown">Berita</a>
                           <ul class="dropdown-menu">
                               @php
                                   $categories = \App\Models\NewsCategory::all();
