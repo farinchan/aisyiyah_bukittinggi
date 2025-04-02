@@ -62,10 +62,10 @@
                                 <div class="post-pagi-area">
                                     @if ($prev_kajian)
                                     <a href="{{ route('kajian.detail', $prev_kajian->slug) }}"><i
-                                            class="fas fa-angle-double-left"></i> Berita Sebelumnya</a>
+                                            class="fas fa-angle-double-left"></i> Kajian Sebelumnya</a>
                                 @endif
                                 @if ($next_kajian)
-                                    <a href="{{ route('kajian.detail', $next_kajian->slug) }}">Berita Selanjutnya <i
+                                    <a href="{{ route('kajian.detail', $next_kajian->slug) }}">Kajian Selanjutnya <i
                                             class="fas fa-angle-double-right"></i></a>
                                 @endif                                </div>
                                 <!-- End Post Pagination -->
