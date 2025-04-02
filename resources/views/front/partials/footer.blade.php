@@ -80,7 +80,7 @@
                                         href="mailto:{{ $setting_web->email }}">{{ $setting_web->email }}</a>
                                 </li>
                             </ul>
-                            <h2><i class="fas fa-phone"></i> +123 456 7890</h2>
+                            <a href="tel:{{ $setting_web->phone }}"><h2><i class="fas fa-phone"></i> {{ $setting_web->phone }}</h2></a>
                         </div>
                     </div>
                     <!-- End Single Item -->
