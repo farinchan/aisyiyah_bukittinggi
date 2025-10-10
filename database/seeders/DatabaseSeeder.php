@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         $fajri->assignRole('user');
 
         SettingWebsite::create([
-            'name' => 'Pimpinan Daerah Muhammadiyah Kabupaten Bukittinggi',
+            'name' => 'Pimpinan Daerah Aisyiyah Kota Bukittinggi',
             'logo' => 'setting/logo.png',
             'favicon' => 'setting/favicon.png',
             'email' => 'office@gariskode.com',
@@ -59,23 +59,22 @@ class DatabaseSeeder extends Seeder
             'whatsapp' => 'https://whatsapp.com',
             'telegram' => 'https://telegram.com',
             'linkedin' => 'https://linkedin.com',
-            'about' => 'Pimpinan Daerah Muhammadiyah Kota Bukittinggi adalah organisasi Islam yang bergerak dalam bidang sosial, pendidikan, dan kesehatan.',
+            'about' => 'Pimpinan Daerah Aisyiyah Kota Bukittinggi adalah organisasi Islam yang bergerak dalam bidang sosial, pendidikan, dan kesehatan.',
         ]);
-
         Profile::create([
             'name' => 'Sejarah',
             'slug' => 'sejarah',
-            'content' => '<h2>Sejarah</h2><p>Sejarah Pimpinan Daerah Muhammadiyah Kota Bukittinggi</p><p>lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</p>',
+            'content' => '<h2>Sejarah</h2><p>Sejarah Pimpinan Daerah Aisyiyah Kota Bukittinggi</p><p>lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</p>',
         ]);
 
         Profile::create([
             'name' => 'Visi Misi',
             'slug' => 'visi-misi',
-            'content' => '<h2>Visi Misi</h2><p>Visi Misi Pimpinan Daerah Muhammadiyah Kota Bukittinggi</p><p>lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</p>',
+            'content' => '<h2>Visi Misi</h2><p>Visi Misi Pimpinan Daerah Aisyiyah Kota Bukittinggi</p><p>lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</p>',
         ]);
 
         SettingBanner::create([
-            'title' => 'Pimpinan Daerah Muhammadiyah Kota Bukittinggi',
+            'title' => 'Pimpinan Daerah Aisyiyah Kota Bukittinggi',
             'subtitle' => 'Organisasi Islam yang bergerak dalam bidang sosial, pendidikan, dan kesehatan.',
             'image' => 'banner/1725391558_yahaha (1).png',
             'url' => 'https://gariskode.com',
