@@ -42,6 +42,8 @@ class SettingController extends Controller
             'telegram' => 'nullable',
             'linkedin' => 'nullable',
             'about' => 'nullable',
+            'register_page' => 'nullable',
+            'register_page_content' => 'nullable',
         ]);
 
         // dd($request->all());
@@ -65,6 +67,9 @@ class SettingController extends Controller
         $setting->telegram = $request->telegram;
         $setting->linkedin = $request->linkedin;
         $setting->about = $request->about;
+        $setting->register_page = $request->has('register_page') ? true : false;
+        $setting->register_page_content = $request->register_page_content;
+
 
         if ($request->hasFile('logo')) {
             Storage::delete('public/' . $setting->logo);
@@ -105,7 +110,7 @@ class SettingController extends Controller
         return redirect()->back();
     }
 
-    public function banner ()
+    public function banner()
     {
         $data = [
             'menu_title' => 'Pengaturan',
@@ -117,7 +122,7 @@ class SettingController extends Controller
         return view('back.pages.setting.banner', $data);
     }
 
-    public function bannerCreate (Request $request)
+    public function bannerCreate(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
@@ -152,7 +157,7 @@ class SettingController extends Controller
         return redirect()->route('admin.setting.banner')->with('success', 'Pengaturan Banner berhasil ditambahkan');
     }
 
-    public function bannerUpdate (Request $request, $id)
+    public function bannerUpdate(Request $request, $id)
     {
         // dd($request->all());
         $validator = Validator::make($request->all(), [
