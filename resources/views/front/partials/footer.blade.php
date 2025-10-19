@@ -9,7 +9,7 @@
                     <!-- Single Item -->
                     <div class="col-md-4 item">
                         <div class="f-item about">
-                            <img src="{{ asset('front/img/logo-light.png') }}" alt="Logo">
+                            <img src="{{ asset('images/Logo_hp.png') }}" alt="Logo" style="width: 230px; height: auto; margin-bottom: 15px;">
                             <p>
                                 {{ strip_tags(Str::limit($setting_web->about, 200)) }}
                             </p>

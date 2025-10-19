@@ -126,7 +126,7 @@
                         <div class="row">
 
                             @foreach ($remainingNews as $news)
-                                <div class="col-md-6 single-item">
+                                <div class="col-md-6 col-sm-6 single-item">
                                     <div class="item">
                                         <div class="thumb">
                                             <a href="#"><img src="{{ $news->getThumbnail() }}" alt="Thumb"></a>
@@ -184,7 +184,7 @@
 
             <div class="row">
                 @foreach ($pengumumans as $pengumuman)
-                    <div class="col-md-4">
+                    <div class="cpl-6 col-sm-6  col-md-4  col-xl-3 mb-4">
 
                         <div class="row">
                             <div class="col-md-3">
