@@ -138,6 +138,17 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
+                                    <!-- Input lainnya -->
+                                    {!! NoCaptcha::renderJs() !!}
+                                    {!! NoCaptcha::display() !!}
+
+                                    @error('g-recaptcha-response')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
                                     <button type="submit" name="send"
                                     onclick="event.preventDefault(); document.getElementById('contact_form').submit();">
                                         Kirim Pesan <i class="fa fa-paper-plane"></i>

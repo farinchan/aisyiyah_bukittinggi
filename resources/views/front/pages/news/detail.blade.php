@@ -26,7 +26,7 @@
 @section('content')
     @include('front.partials.breadcrumb')
     <!-- Start Blog
-                            ============================================= -->
+                                ============================================= -->
     <div class="blog-area single full-blog right-sidebar default-padding">
         <div class="container">
             <div class="row">
@@ -203,6 +203,15 @@
                                                         <!-- Comment -->
                                                         <textarea class="form-control" placeholder="Komentar" name="comment" id="comment" required></textarea>
                                                     </div>
+
+                                                    <!-- Input lainnya -->
+                                                    {!! NoCaptcha::renderJs() !!}
+                                                    {!! NoCaptcha::display() !!}
+
+                                                    @error('g-recaptcha-response')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
+
                                                     <div class="form-group full-width submit">
                                                         <button type="submit">
                                                             Kirim Komentar

@@ -15,7 +15,7 @@
 
 @section('content')
     <!-- Start Banner
-                                        ============================================= -->
+                                                ============================================= -->
     <div class="banner-area auto-height title-uppercase small-first text-light text-center">
         <div id="bootcarousel" class="carousel inc-top-heading slide carousel-fade animate_text" data-ride="carousel">
             <!-- Wrapper for slides -->
@@ -62,7 +62,7 @@
 
 
     <!-- Start Blog Area
-                    ============================================= -->
+                            ============================================= -->
     <div class="blog-area default-padding bottom-less" style="padding-bottom: 0px;">"
         <div class="container">
             <div class="row">
@@ -168,7 +168,7 @@
     <!-- End Blog Area -->
 
     <!-- Start pengumuman Area
-                    ============================================= -->
+                            ============================================= -->
     <div class="blog-area default-padding bottom-less bg-gray">
         <div class="container">
             <div class="row">
@@ -214,7 +214,7 @@
 
 
     <!-- Start About
-                                        ============================================= -->
+                                                ============================================= -->
     <div class="about-area default-padding ">
         <div class="container">
             <div class="row">
@@ -247,7 +247,7 @@
     <!-- End About -->
 
     <!-- Start Services
-                                        ============================================= -->
+                                                ============================================= -->
     <div class="services-area carousel-shadow half-bg inc-thumb default-padding bg-gray">
         <div class="container">
             <div class="row">
@@ -311,7 +311,7 @@
 
 
     <!-- Start Gallery
-                                        ============================================= -->
+                                                ============================================= -->
     <div class="gallery-area  default-padding">
         <div class="container">
             <div class="gallery-items-area text-center">
@@ -360,7 +360,7 @@
 
 
     <!-- Start Contact
-                ============================================= -->
+                        ============================================= -->
     <div class="contact-area bg-gray default-padding">
         <div class="container">
             <div class="row">
@@ -406,6 +406,17 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
+                                    <!-- Input lainnya -->
+                                    {!! NoCaptcha::renderJs() !!}
+                                    {!! NoCaptcha::display() !!}
+
+                                    @error('g-recaptcha-response')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
                                     <button type="submit" name="send"
                                         onclick="event.preventDefault(); document.getElementById('contact_form').submit();">
                                         Kirim Pesan <i class="fa fa-paper-plane"></i>
@@ -422,16 +433,16 @@
 @endsection
 
 @section('scripts')
-<script>
-    $.ajax({
-        url: "{{ route('visit.ajax') }}",
-        type: "GET",
-        success: function(response) {
-            console.log(response);
-        },
-        error: function(error) {
-            console.log(error);
-        }
-    });
-</script>
-    @endsection
+    <script>
+        $.ajax({
+            url: "{{ route('visit.ajax') }}",
+            type: "GET",
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    </script>
+@endsection
